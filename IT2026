@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CA Inter | Income Tax Law – Chapter 1: Basic Concepts</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #0f1117;
+    --ink-light: #3b3f52;
+    --paper: #f8f7f3;
+    --rule: #e2dfd6;
+    --accent: #1a56db;
+    --accent-warm: #c75000;
+    --accent-green: #0d7a4e;
+    --accent-purple: #5b35c2;
+    --tag-blue: #dbeafe;
+    --tag-orange: #ffedd5;
+    --tag-green: #dcfce7;
+    --tag-purple: #ede9fe;
+    --highlight: #fef9c3;
+    --card-bg: #ffffff;
+    --shadow: 0 2px 12px rgba(15,17,23,0.07);
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 56px 40px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 32px,
+      rgba(255,255,255,0.025) 32px,
+      rgba(255,255,255,0.025) 33px
+    );
+  }
+  .hero-inner { position: relative; max-width: 900px; margin: 0 auto; }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .hero h1 span { color: #60a5fa; }
+  .hero-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    font-weight: 300;
+    max-width: 560px;
+  }
+  .hero-badges {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .badge {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.75);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── LAYOUT ── */
+  .content { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* ── SECTION TITLES ── */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::after {
+    content: ''; flex: 1;
+    height: 1px; background: var(--rule);
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card-title .icon {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+  }
+
+  /* ── COMPARE TABLE ── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .compare-col {
+    border-radius: 9px;
+    padding: 18px 20px;
+    border: 1.5px solid;
+  }
+  .compare-col.blue { background: #eff6ff; border-color: #bfdbfe; }
+  .compare-col.orange { background: #fff7ed; border-color: #fed7aa; }
+  .compare-col h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 13.5px;
+    margin-bottom: 10px;
+  }
+  .compare-col.blue h4 { color: var(--accent); }
+  .compare-col.orange h4 { color: var(--accent-warm); }
+  .compare-col ul { padding-left: 16px; font-size: 13.5px; }
+  .compare-col ul li { margin-bottom: 5px; }
+
+  /* ── STEPS ── */
+  .steps-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .step-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .step-num {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 6px;
+    min-width: 34px; height: 34px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-content { flex: 1; }
+  .step-title {
+    font-weight: 600;
+    font-size: 14.5px;
+    margin-bottom: 3px;
+    color: var(--ink);
+  }
+  .step-desc { font-size: 13px; color: var(--ink-light); line-height: 1.5; }
+
+  /* ── DEFINITION CARDS ── */
+  .def-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .def-card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent);
+  }
+  .def-card.warm { border-left-color: var(--accent-warm); }
+  .def-card.green { border-left-color: var(--accent-green); }
+  .def-card.purple { border-left-color: var(--accent-purple); }
+  .def-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .def-card .sec-ref {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--tag-blue);
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .def-card.warm .sec-ref { color: var(--accent-warm); background: var(--tag-orange); }
+  .def-card.green .sec-ref { color: var(--accent-green); background: var(--tag-green); }
+  .def-card.purple .sec-ref { color: var(--accent-purple); background: var(--tag-purple); }
+  .def-card p { font-size: 13px; color: var(--ink-light); line-height: 1.55; }
+
+  /* ── TAX TABLE ── */
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13.5px; border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  thead th {
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 13px;
+  }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody tr:nth-child(even) { background: #f5f4f0; }
+  tbody td { padding: 11px 16px; }
+  tbody td:last-child { font-weight: 600; color: var(--accent); }
+  .nil { color: var(--accent-green) !important; }
+
+  /* ── CALLOUT / NOTE ── */
+  .callout {
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 16px 0;
+    display: flex; gap: 12px; align-items: flex-start;
+    font-size: 13.5px;
+  }
+  .callout.tip { background: var(--highlight); border: 1px solid #fde68a; }
+  .callout.info { background: var(--tag-blue); border: 1px solid #bfdbfe; }
+  .callout.warn { background: var(--tag-orange); border: 1px solid #fed7aa; }
+  .callout.exam { background: var(--tag-purple); border: 1px solid #c4b5fd; }
+  .callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .callout-text { line-height: 1.55; }
+  .callout-text strong { display: block; margin-bottom: 3px; font-size: 13px; }
+
+  /* ── PERSONS WHEEL GRID ── */
+  .persons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .person-tile {
+    background: var(--card-bg);
+    border: 1.5px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 16px 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: border-color 0.2s;
+  }
+  .person-tile:hover { border-color: var(--accent); }
+  .person-tile .emoji { font-size: 26px; margin-bottom: 8px; }
+  .person-tile h5 { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; }
+  .person-tile p { font-size: 11.5px; color: var(--ink-light); margin-top: 4px; line-height: 1.4; }
+
+  /* ── HEADS OF INCOME PILLS ── */
+  .heads-row {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin: 16px 0;
+  }
+  .head-pill {
+    background: var(--card-bg);
+    border: 1.5px solid var(--rule);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+    flex: 1 1 160px;
+    box-shadow: var(--shadow);
+  }
+  .head-pill .dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── FLOW CHART (COMPONENTS) ── */
+  .flow {
+    display: flex; gap: 0; align-items: stretch;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .flow-item {
+    flex: 1 1 140px;
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 12.5px;
+    font-weight: 600;
+    position: relative;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    margin: 4px;
+  }
+  .flow-item .emoji { font-size: 20px; display: block; margin-bottom: 6px; }
+
+  /* ── SPACER ── */
+  .section { margin-bottom: 44px; }
+  .mt { margin-top: 20px; }
+  .mb { margin-bottom: 10px; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 32px 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: #aaa;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── REGIME COMPARE ── */
+  .regime-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .regime-card {
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 2px solid;
+  }
+  .regime-card.default { background: #eff6ff; border-color: var(--accent); }
+  .regime-card.optional { background: #fff7ed; border-color: var(--accent-warm); }
+  .regime-card h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .regime-card.default h4 { color: var(--accent); }
+  .regime-card.optional h4 { color: var(--accent-warm); }
+  .regime-card ul { padding-left: 16px; font-size: 13px; }
+  .regime-card ul li { margin-bottom: 5px; line-height: 1.45; }
+
+  @media (max-width: 600px) {
+    .compare-grid, .regime-grid, .persons-grid { grid-template-columns: 1fr 1fr; }
+    .hero { padding: 40px 20px; }
+    .content { padding: 28px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════ HERO ════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">CA Intermediate · Income Tax Law · ICAI Study Material</p>
+    <h1>Chapter 1<br><span>Basic Concepts</span></h1>
+    <p class="hero-sub">A complete visual study guide for CA Inter students — covering taxes, charge of income-tax, definitions, computation steps, and tax regimes.</p>
+    <div class="hero-badges">
+      <span class="badge">Module 1</span>
+      <span class="badge">Income-tax Act, 1961</span>
+      <span class="badge">Section 115BAC</span>
+      <span class="badge">A.Y. 2025-26</span>
+      <span class="badge">Finance Act 2025</span>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+
+  <!-- ════ SECTION 1: WHAT IS TAX ════ -->
+  <section class="section">
+    <p class="section-label">Section 1</p>
+    <h2 class="section-title">Understanding Tax</h2>
+
+    <div class="compare-grid">
+      <div class="compare-col blue">
+        <h4>⚖️ Direct Tax</h4>
+        <ul>
+          <li>Levied on <strong>income or wealth</strong> of a person</li>
+          <li>Burden <strong>cannot be shifted</strong> to another person</li>
+          <li>Payer and bearer are the <strong>same person</strong></li>
+          <li><strong>Example:</strong> Income-tax</li>
+        </ul>
+      </div>
+      <div class="compare-col orange">
+        <h4>🔄 Indirect Tax</h4>
+        <ul>
+          <li>Levied on <strong>price of goods or services</strong></li>
+          <li>Burden can be <strong>passed on</strong> to another person</li>
+          <li>Incidence is <strong>shifted</strong> to the consumer</li>
+          <li><strong>Examples:</strong> GST, Customs Duty</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <span class="callout-icon">📜</span>
+      <div class="callout-text">
+        <strong>Constitutional Basis — Article 265</strong>
+        "No tax shall be levied or collected except by authority of law." Income-tax is governed by <strong>Entry 82, Union List</strong> (7th Schedule, Article 246) — Parliament has exclusive power to legislate on income tax (excluding agricultural income).
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ SECTION 2: COMPONENTS OF IT LAW ════ -->
+  <section class="section">
+    <p class="section-label">Section 2</p>
+    <h2 class="section-title">Components of Income-tax Law</h2>
+
+    <div class="flow">
+      <div class="flow-item">
+        <span class="emoji">📘</span>
+        Income-tax Act, 1961
+      </div>
+      <div class="flow-item">
+        <span class="emoji">💰</span>
+        Annual Finance Act
+      </div>
+      <div class="flow-item">
+        <span class="emoji">📋</span>
+        Income-tax Rules, 1962
+      </div>
+      <div class="flow-item">
+        <span class="emoji">🔔</span>
+        Circulars &amp; Notifications
+      </div>
+      <div class="flow-item">
+        <span class="emoji">⚖️</span>
+        Legal Decisions of Courts
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon" style="background:#eff6ff">📘</span> Income-tax Act, 1961</div>
+      <ul style="font-size:13.5px; padding-left:18px; color:var(--ink-light)">
+        <li>Extends to the <strong>whole of India</strong>; came into force on <strong>1st April 1962</strong></li>
+        <li>Contains <strong>Sections 1–298</strong> and Schedules I–XIV</li>
+        <li><strong>Sub-sections</strong>: related parts of a section (together form a complete concept)</li>
+        <li><strong>Clauses</strong>: independent parts of a section (e.g., definitions in Section 2)</li>
+        <li><strong>Proviso</strong>: spells out exceptions/conditions to a provision</li>
+        <li><strong>Explanation</strong>: provides clarification to a provision</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon" style="background:#fff7ed">💰</span> Finance Act — First Schedule</div>
+      <table>
+        <thead><tr><th>Part</th><th>What it covers</th><th>Period</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Part I</strong></td><td>Rates of tax for current Assessment Year</td><td>A.Y. 2025-26</td></tr>
+          <tr><td><strong>Part II</strong></td><td>TDS rates for the current Financial Year</td><td>F.Y. 2025-26</td></tr>
+          <tr><td><strong>Part III</strong></td><td>Rates for salary TDS &amp; advance tax (optional regime)</td><td>F.Y. 2025-26</td></tr>
+          <tr><td><strong>Part IV</strong></td><td>Rules for computing net agricultural income</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-icon">💡</span>
+      <div class="callout-text">
+        <strong>CBDT = Central Board of Direct Taxes</strong>
+        Administers direct taxes; frames Income-tax Rules, 1962; issues Circulars (guidance, binding on dept.) and Notifications (binding on both dept. and assessees).
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ SECTION 3: CHARGE OF INCOME TAX ════ -->
+  <section class="section">
+    <p class="section-label">Section 3 · Section 4</p>
+    <h2 class="section-title">Charge of Income-tax</h2>
+
+    <div class="card">
+      <div class="card-title"><span class="icon" style="background:#dcfce7">⚡</span> Section 4 — The Charging Section</div>
+      <p style="font-size:13.5px; color:var(--ink-light); margin-bottom:12px">This is the backbone of income-tax law. Tax is charged:</p>
+      <ul style="font-size:13.5px; padding-left:18px; color:var(--ink-light)">
+        <li>At <strong>rates prescribed</strong> by the Annual Finance Act or the Income-tax Act</li>
+        <li>On <strong>every person</strong> specified under Section 2(31)</li>
+        <li>On <strong>total income earned during the Previous Year</strong> (not Assessment Year)</li>
+        <li>In accordance with the provisions of the Act</li>
+      </ul>
+      <div class="callout warn" style="margin-top:14px; margin-bottom:0">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-text"><strong>Exceptions to PY taxation rule:</strong> Sections 172, 174, 174A, 175, and 176 — income of a PY may be assessed in the PY itself (e.g., shipping income of non-residents, persons about to leave India, etc.)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ SECTION 4: 15 STEPS ════ -->
+  <section class="section">
+    <p class="section-label">Section 4 · Computation</p>
+    <h2 class="section-title">15 Steps to Compute Total Income &amp; Tax Liability</h2>
+
+    <ol class="steps-list">
+      <li class="step-item">
+        <span class="step-num">01</span>
+        <div class="step-content">
+          <p class="step-title">Determine Residential Status</p>
+          <p class="step-desc">Classify as Resident &amp; Ordinarily Resident (ROR), Resident but Not Ordinarily Resident (RNOR), or Non-Resident (NR). Also covers Deemed Resident (always RNOR).</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">02</span>
+        <div class="step-content">
+          <p class="step-title">Classify Income Under Five Heads</p>
+          <p class="step-desc">Salaries | Income from House Property | PGBP | Capital Gains | Income from Other Sources</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">03</span>
+        <div class="step-content">
+          <p class="step-title">Compute Income Under Each Head</p>
+          <p class="step-desc">Apply charging &amp; deeming provisions. Allow permissible exemptions (e.g., agricultural income fully exempt) and head-specific deductions. Note: Sec 14A disallows expenses relating to exempt income.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">04</span>
+        <div class="step-content">
+          <p class="step-title">Apply Clubbing Provisions</p>
+          <p class="step-desc">Income diverted to spouse, minor child, etc. is clubbed back into the income of the person who diverted it to prevent tax avoidance (Chapter 4).</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">05</span>
+        <div class="step-content">
+          <p class="step-title">Set-off / Carry Forward of Losses</p>
+          <p class="step-desc">Intra-head set-off first, then inter-head adjustment (with restrictions). Unabsorbed losses can be carried forward (Chapter 5). Default regime: loss from HP cannot be set off against any other head.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">06</span>
+        <div class="step-content">
+          <p class="step-title">Compute Gross Total Income (GTI)</p>
+          <p class="step-desc">Aggregate net income under all heads after clubbing and set-off.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">07</span>
+        <div class="step-content">
+          <p class="step-title">Deductions from GTI (Chapter VI-A + Sec 10AA)</p>
+          <p class="step-desc">Available only under optional tax regime. Includes 80C (LIC, PF), 80D (medical insurance), 80G (donations), 80TTA (savings interest), etc. Only select deductions under default regime.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">08</span>
+        <div class="step-content">
+          <p class="step-title">Compute Total Income (TI)</p>
+          <p class="step-desc">GTI − Deductions = Total Income. Round off to nearest ₹10 (Sec 288A).</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">09</span>
+        <div class="step-content">
+          <p class="step-title">Apply Applicable Tax Rates</p>
+          <p class="step-desc">Apply slab rates (default regime u/s 115BAC or optional regime). Special rates apply to LTCG, lottery winnings, specified STCG, etc.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">10</span>
+        <div class="step-content">
+          <p class="step-title">Surcharge &amp; Rebate u/s 87A</p>
+          <p class="step-desc">Surcharge on IT when total income exceeds ₹50 lakhs. Rebate u/s 87A: up to ₹12 lakh TI (default) or ₹5 lakh TI (optional regime) for resident individuals.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">11</span>
+        <div class="step-content">
+          <p class="step-title">Add Health &amp; Education Cess</p>
+          <p class="step-desc">4% on (Income-tax + Surcharge). Applied after the rebate u/s 87A.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">12</span>
+        <div class="step-content">
+          <p class="step-title">Alternate Minimum Tax (AMT) — Sec 115JC</p>
+          <p class="step-desc">Applicable under optional regime to preserve tax base. Tax credit of excess AMT can be claimed in subsequent years. Not applicable under default tax regime.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">13</span>
+        <div class="step-content">
+          <p class="step-title">Choose Beneficial Tax Regime</p>
+          <p class="step-desc">Compute under both regimes. Non-business assessees (individuals/HUF/AOP/BOI) can switch every year. Business assessees have restrictions on switching.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">14</span>
+        <div class="step-content">
+          <p class="step-title">Advance Tax &amp; TDS / TCS</p>
+          <p class="step-desc">Advance tax in 4 instalments: 15 Jun, 15 Sep, 15 Dec, 15 Mar. Presumptive taxation: one instalment by 15 Mar. TDS deducted by payer and remitted to Govt via RBI/SBI/authorised bank.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <span class="step-num">15</span>
+        <div class="step-content">
+          <p class="step-title">Tax Payable / Refundable</p>
+          <p class="step-desc">Gross Tax − Advance Tax − TDS/TCS = Self-Assessment Tax or Refund. Round off to nearest ₹10 (Sec 288B). Pay on/before due date of return filing.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ════ SECTION 5: HEADS OF INCOME ════ -->
+  <section class="section">
+    <p class="section-label">Step 2 Deep-Dive</p>
+    <h2 class="section-title">Five Heads of Income</h2>
+    <div class="heads-row">
+      <div class="head-pill"><span class="dot" style="background:#1a56db"></span>Salaries</div>
+      <div class="head-pill"><span class="dot" style="background:#0d7a4e"></span>Income from House Property</div>
+      <div class="head-pill"><span class="dot" style="background:#c75000"></span>Profits &amp; Gains of Business/Profession</div>
+      <div class="head-pill"><span class="dot" style="background:#5b35c2"></span>Capital Gains</div>
+      <div class="head-pill"><span class="dot" style="background:#b91c1c"></span>Income from Other Sources <em style="font-weight:400;font-size:11px">(residuary)</em></div>
+    </div>
+    <div class="callout tip">
+      <span class="callout-icon">💡</span>
+      <div class="callout-text">
+        <strong>Section 14A — Disallowance of Expenses on Exempt Income</strong>
+        Any expenditure incurred to earn exempt income is not deductible under any head. The CBDT prescribes the method to determine such expenditure. This applies even when exempt income has not accrued in the relevant previous year.
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ SECTION 6: TAX REGIMES ════ -->
+  <section class="section">
+    <p class="section-label">Section 115BAC</p>
+    <h2 class="section-title">Tax Regimes at a Glance</h2>
+
+    <div class="regime-grid">
+      <div class="regime-card default">
+        <h4>🟦 Default Tax Regime (Sec 115BAC)</h4>
+        <ul>
+          <li>Basic exemption limit: <strong>₹4,00,000</strong></li>
+          <li>Rebate u/s 87A for TI up to <strong>₹12,00,000</strong></li>
+          <li><strong>Most exemptions/deductions NOT available</strong> (no LTC, no housing loan interest on SOP, no Chapter VI-A except 80CCD(2), 80CCH(2), 80JJAA)</li>
+          <li>Loss from HP <strong>cannot</strong> be set off</li>
+          <li>AMT u/s 115JC <strong>not applicable</strong></li>
+          <li>Non-business assessees can switch every year</li>
+        </ul>
+      </div>
+      <div class="regime-card optional">
+        <h4>🟧 Optional / Normal Tax Regime</h4>
+        <ul>
+          <li>Basic exemption limit: <strong>₹2,50,000</strong></li>
+          <li>Rebate u/s 87A for TI up to <strong>₹5,00,000</strong></li>
+          <li><strong>All exemptions &amp; deductions available</strong> (Chapter VI-A, LTC, HRA, housing loan, etc.)</li>
+          <li>Chapter VI-A deductions in full</li>
+          <li>AMT u/s 115JC <strong>applicable</strong></li>
+          <li>Business assessees face restrictions on switching back</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="section-title mt" style="font-size:17px">Tax Slab Rates — Default Regime (Sec 115BAC) | A.Y. 2025-26</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Total Income Range</th>
+          <th>Rate of Tax</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Up to ₹4,00,000</td><td class="nil">Nil</td></tr>
+        <tr><td>2</td><td>₹4,00,001 – ₹8,00,000</td><td>5%</td></tr>
+        <tr><td>3</td><td>₹8,00,001 – ₹12,00,000</td><td>10%</td></tr>
+        <tr><td>4</td><td>₹12,00,001 – ₹16,00,000</td><td>15%</td></tr>
+        <tr><td>5</td><td>₹16,00,001 – ₹20,00,000</td><td>20%</td></tr>
+        <tr><td>6</td><td>₹20,00,001 – ₹24,00,000</td><td>25%</td></tr>
+        <tr><td>7</td><td>Above ₹24,00,000</td><td>30%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mt"></div>
+    <h3 class="section-title" style="font-size:17px">Tax Slab Rates — Optional Regime | A.Y. 2025-26</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Total Income Range</th>
+          <th>Rate of Tax</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Up to ₹2,50,000</td><td class="nil">Nil</td></tr>
+        <tr><td>2</td><td>₹2,50,001 – ₹5,00,000</td><td>5%</td></tr>
+        <tr><td>3</td><td>₹5,00,001 – ₹10,00,000</td><td>20%</td></tr>
+        <tr><td>4</td><td>Above ₹10,00,000</td><td>30%</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout exam">
+      <span class="callout-icon">🎯</span>
+      <div class="callout-text">
+        <strong>Exam Alert — Surcharge &amp; Cess</strong>
+        Surcharge applies when total income exceeds ₹50 lakhs. Health &amp; Education Cess = 4% on (IT + Surcharge). Marginal relief may reduce surcharge impact. Always add cess as the final step.
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ SECTION 7: IMPORTANT DEFINITIONS ════ -->
+  <section class="section">
+    <p class="section-label">Section 2 · Key Definitions</p>
+    <h2 class="section-title">Important Definitions</h2>
+
+    <div class="def-grid">
+      <div class="def-card">
+        <span class="sec-ref">Section 2(7)</span>
+        <h4>Assessee</h4>
+        <p>Any person by whom tax or other sum is payable. Includes persons under assessment proceedings, deemed assessees, and assessees-in-default. Every assessee is a person, but not every person is an assessee.</p>
+      </div>
+      <div class="def-card warm">
+        <span class="sec-ref">Section 2(8)</span>
+        <h4>Assessment</h4>
+        <p>The procedure by which income of an assessee is determined. May be a normal assessment or a reassessment. Dealt with in detail at Final level.</p>
+      </div>
+      <div class="def-card green">
+        <span class="sec-ref">Section 2(31)</span>
+        <h4>Person (7 Categories)</h4>
+        <p>Individual · HUF · Company · Firm · AOP · BOI · Local Authority · Artificial Juridical Person. AOP/BOI are persons even if not formed for income.</p>
+      </div>
+      <div class="def-card purple">
+        <span class="sec-ref">Section 2(24)</span>
+        <h4>Income (Inclusive)</h4>
+        <p>An inclusive, not exhaustive, definition. Includes profits &amp; gains, dividends, perquisites, allowances, capital gains, lottery winnings, subsidy/grant from govt, keyman insurance policy receipts, etc.</p>
+      </div>
+      <div class="def-card">
+        <span class="sec-ref">Section 2(9)</span>
+        <h4>Assessment Year (AY)</h4>
+        <p>The 12-month period <strong>following</strong> the Previous Year during which income of the PY is assessed to tax. Runs from 1st April to 31st March. Current AY = 2025-26.</p>
+      </div>
+      <div class="def-card warm">
+        <span class="sec-ref">Section 3</span>
+        <h4>Previous Year (PY)</h4>
+        <p>The financial year <strong>immediately preceding</strong> the Assessment Year. Tax is charged on income earned in PY but assessed in AY. For a new business: from date of setting up to 31 March.</p>
+      </div>
+      <div class="def-card green">
+        <span class="sec-ref">Section 2(1A)</span>
+        <h4>Agricultural Income</h4>
+        <p>Rent/revenue from agricultural land in India; income from such land by agriculture or agricultural operations; income from a farm building used in connection with such operations.</p>
+      </div>
+      <div class="def-card purple">
+        <span class="sec-ref">Section 2(14)</span>
+        <h4>Capital Asset</h4>
+        <p>Property of any kind held by an assessee (movable, immovable, tangible, intangible). Excludes: stock-in-trade, personal effects, agricultural land in rural areas, etc.</p>
+      </div>
+    </div>
+
+    <!-- PERSONS DEEP DIVE -->
+    <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:17px; margin-bottom:14px">7 Categories of "Person" — Section 2(31)</h3>
+    <div class="persons-grid">
+      <div class="person-tile">
+        <div class="emoji">🧑</div>
+        <h5>Individual</h5>
+        <p>Natural person only. Includes minor, person of unsound mind. Assessed via guardian if minor.</p>
+      </div>
+      <div class="person-tile">
+        <div class="emoji">🏠</div>
+        <h5>HUF</h5>
+        <p>Hindu Undivided Family. Jain &amp; Sikh families also assessed as HUF. Daughters are coparceners since 6 Sep 2005.</p>
+      </div>
+      <div class="person-tile">
+        <div class="emoji">🏢</div>
+        <h5>Company</h5>
+        <p>Indian company, foreign company, or entity declared as company by CBDT. Domestic vs. Foreign classification.</p>
+      </div>
+      <div class="person-tile">
+        <div class="emoji">🤝</div>
+        <h5>Firm</h5>
+        <p>As per Indian Partnership Act, 1932 and LLP Act, 2008. Minor admitted to benefits treated as partner.</p>
+      </div>
+      <div class="person-tile">
+        <div class="emoji">👥</div>
+        <h5>AOP</h5>
+        <p>Association of Persons. Any person (incl. company, firm) can be member. Formed for joint enterprise.</p>
+      </div>
+      <div class="person-tile">
+        <div class="emoji">🧑‍🤝‍🧑</div>
+        <h5>BOI</h5>
+        <p>Body of Individuals. Only individuals as members. Executors, co-trustees. Common will may or may not exist.</p>
+      </div>
+      <div class="person-tile">
+        <div class="emoji">🏛️</div>
+        <h5>Local Authority</h5>
+        <p>Municipal committee, district board, port authority. Exempt for services within own jurisdictional area.</p>
+      </div>
+      <div class="person-tile">
+        <div class="emoji">⚖️</div>
+        <h5>Artificial Juridical Person</h5>
+        <p>Residual category. Deities, Bar Councils, Universities. Not a natural person but has juristic personality.</p>
+      </div>
+    </div>
+
+    <div class="callout exam">
+      <span class="callout-icon">🎯</span>
+      <div class="callout-text">
+        <strong>AOP vs BOI — Key Distinction</strong>
+        BOI: only <em>individuals</em> can be members. AOP: any <em>person</em> (including companies/firms) can be a member. In AOP, members voluntarily come together with a common will. In BOI, common will is not necessary.
+      </div>
+    </div>
+
+    <!-- HUF - SCHOOLS -->
+    <div class="card mt">
+      <div class="card-title"><span class="icon" style="background:#ede9fe">🏠</span> HUF — Schools of Hindu Law</div>
+      <div class="compare-grid" style="margin-bottom:0">
+        <div class="compare-col blue">
+          <h4>📍 Dayabhaga School</h4>
+          <ul>
+            <li>Prevalent in <strong>West Bengal &amp; Assam</strong></li>
+            <li>No right by birth; right to property arises <strong>only on death</strong> of father</li>
+            <li>Father and brothers are coparceners</li>
+          </ul>
+        </div>
+        <div class="compare-col orange">
+          <h4>📍 Mitakshara School</h4>
+          <ul>
+            <li>Prevalent in <strong>rest of India</strong></li>
+            <li>Right to property <strong>acquired by birth</strong></li>
+            <li>Every child born acquires a right/share in family property</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ SECTION 8: AGRICULTURAL INCOME ════ -->
+  <section class="section">
+    <p class="section-label">Section 2(1A) · Section 10(1)</p>
+    <h2 class="section-title">Agricultural Income</h2>
+
+    <div class="card">
+      <div class="card-title"><span class="icon" style="background:#dcfce7">🌾</span> What Qualifies as Agricultural Income?</div>
+      <ul style="font-size:13.5px; padding-left:18px; color:var(--ink-light)">
+        <li><strong>Rent/revenue</strong> derived from agricultural land situated in India</li>
+        <li>Income derived from such land by <strong>agriculture or agricultural operations</strong> (cultivation, tilling, irrigation, etc.)</li>
+        <li>Income from a <strong>farm building</strong> used in connection with agricultural operations on such land (must be on/near the land, occupied by cultivator/receiver of rent)</li>
+        <li>Income from <strong>nursery operations</strong> (seedlings/saplings grown in nurseries)</li>
+      </ul>
+    </div>
+
+    <div class="callout warn">
+      <span class="callout-icon">⚠️</span>
+      <div class="callout-text">
+        <strong>Agricultural Income is FULLY EXEMPT u/s 10(1)</strong> — not included in Total Income. However, it IS considered for computing tax rate (partial integration method) when an individual/HUF/AOP/BOI has both agricultural and non-agricultural income exceeding the basic exemption limit.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="icon" style="background:#fff7ed">🏭</span> Partly Agricultural / Partly Business Income (Rule 7, 7A, 7B, 8)</div>
+      <table>
+        <thead><tr><th>Activity</th><th>Agricultural</th><th>Business</th></tr></thead>
+        <tbody>
+          <tr><td>Growing &amp; Manufacturing Tea</td><td>60%</td><td>40%</td></tr>
+          <tr><td>Growing &amp; Manufacturing Coffee (cured)</td><td>75%</td><td>25%</td></tr>
+          <tr><td>Growing &amp; Manufacturing Coffee (roasted/grounded)</td><td>60%</td><td>40%</td></tr>
+          <tr><td>Growing &amp; Manufacturing Rubber</td><td>65%</td><td>35%</td></tr>
+          <tr><td>Growing Sugarcane &amp; Manufacturing Sugar</td><td>Normal market value of sugarcane credited</td><td>Balance</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ════ SECTION 9: PY / AY CONCEPTS ════ -->
+  <section class="section">
+    <p class="section-label">Previous Year · Assessment Year</p>
+    <h2 class="section-title">PY &amp; AY — Key Concepts</h2>
+
+    <div class="compare-grid">
+      <div class="compare-col blue">
+        <h4>📅 Previous Year (PY)</h4>
+        <ul>
+          <li>Financial year preceding the AY</li>
+          <li>Income <strong>earned</strong> in PY is taxed in AY</li>
+          <li>For new business: from date of setting up → 31 March</li>
+          <li>All sources of income share the <strong>same PY</strong></li>
+          <li>Current PY = 2024-25</li>
+        </ul>
+      </div>
+      <div class="compare-col orange">
+        <h4>📅 Assessment Year (AY)</h4>
+        <ul>
+          <li>Year in which income of PY is <strong>assessed</strong></li>
+          <li>Runs from <strong>1 April to 31 March</strong></li>
+          <li>Return of income filed in AY</li>
+          <li>Current AY = 2025-26</li>
+          <li>Tax rates of Finance Act of AY apply</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout exam">
+      <span class="callout-icon">🎯</span>
+      <div class="callout-text">
+        <strong>Exceptions — Income of PY Taxed in PY Itself:</strong>
+        Section 172 (Shipping income of non-residents) · Section 174 (Persons leaving India) · Section 174A (AOP/BOI/Artificial Juridical Person formed for specific event/purpose) · Section 175 (Persons likely to transfer property to avoid tax) · Section 176 (Discontinued businesses)
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ QUICK RECAP ════ -->
+  <section class="section">
+    <p class="section-label">Quick Revision</p>
+    <h2 class="section-title">High-Yield Exam Points</h2>
+
+    <div class="callout tip">
+      <span class="callout-icon">✅</span>
+      <div class="callout-text">
+        <strong>Must Remember for Exams</strong><br>
+        • Tax = levied by law (Art. 265) · Income tax → Entry 82, Union List<br>
+        • Section 4 = Charging section (backbone of ITA)<br>
+        • Tax on Total Income of <strong>Previous Year</strong>, assessed in Assessment Year<br>
+        • 5 Heads of Income (exhaustive list — every income must fall under one)<br>
+        • Sec 14A: No deduction for expenses on exempt income<br>
+        • Default regime (115BAC): Lower rates but fewer deductions; no AMT<br>
+        • Cess: 4% on IT + Surcharge (always last step)<br>
+        • Agricultural income: fully exempt u/s 10(1) but used for rate determination<br>
+        • AOP members: any person; BOI members: only individuals<br>
+        • Daughter = coparcener in HUF since 6 Sep 2005 (Mitakshara school)<br>
+        • Surcharge applies when TI &gt; ₹50 lakhs
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  CA Intermediate · Income Tax Law · Chapter 1: Basic Concepts · Based on ICAI Study Material (A.Y. 2025-26) · © ICAI
+</footer>
+
+</body>
+</html>
